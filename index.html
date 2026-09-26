@@ -44,7 +44,11 @@
     border-bottom:1px solid var(--border);
   }
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
-  .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.15rem;color:var(--ink)}
+  .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.22rem;letter-spacing:-0.022em;color:var(--ink);line-height:1}
+  .brand-leaf{width:1.32em;height:1.32em;fill:var(--primary);flex:none;display:block}
+  .brand-word{display:inline-flex}
+  .brand-habit{color:var(--ink)}
+  .brand-flow{color:var(--primary)}
   .brand .leaf{font-size:1.25rem}
   .navlinks{display:flex;align-items:center;gap:28px;font-weight:600;font-size:0.92rem}
   .navlinks a{color:var(--ink-soft)}
@@ -175,7 +179,7 @@
 
   <div class="nav">
     <div class="wrap">
-      <div class="brand"><span class="leaf">🌿</span> HabitFlow</div>
+      <div class="brand"><svg class="brand-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M17,8 C8,10 5.9,16.17 3.82,21.34 L5.71,22 L6.66,19.7 C7.14,19.87 7.64,20 8,20 C19,20 22,3 22,3 C21,5 14,5.25 9,6.25 C4,7.25 2,11.5 2,13.5 C2,15.5 3.75,17.25 3.75,17.25 C7,8 17,8 17,8 Z"/></svg><span class="brand-word"><span class="brand-habit">Habit</span><span class="brand-flow">Flow</span></span></div>
       <div class="navlinks">
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
@@ -280,7 +284,7 @@
 
   <div class="footer">
     <div class="wrap">
-      <div class="brand"><span class="leaf">🌿</span> HabitFlow</div>
+      <div class="brand"><svg class="brand-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M17,8 C8,10 5.9,16.17 3.82,21.34 L5.71,22 L6.66,19.7 C7.14,19.87 7.64,20 8,20 C19,20 22,3 22,3 C21,5 14,5.25 9,6.25 C4,7.25 2,11.5 2,13.5 C2,15.5 3.75,17.25 3.75,17.25 C7,8 17,8 17,8 Z"/></svg><span class="brand-word"><span class="brand-habit">Habit</span><span class="brand-flow">Flow</span></span></div>
       <div class="footer-links">
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy Policy</a>
