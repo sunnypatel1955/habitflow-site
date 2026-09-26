@@ -5,114 +5,161 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HabitFlow Support</title>
 <meta name="description" content="Get help with HabitFlow — contact support, report a bug, or ask a question.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --primary:#6750A4;
+    --primary-dark:#4A3780;
     --grad-a:#7C3AED;
     --grad-b:#A78BFA;
+    --grad-c:#DDD6FE;
     --ink:#1C1B1F;
-    --ink-soft:#49454F;
-    --bg:#FFFBFE;
+    --ink-soft:#5A5566;
+    --bg:#FFFFFF;
+    --bg-tint:#FAF8FC;
     --card:#F7F2FA;
-    --border:#E7E0EC;
+    --border:#EAE4F0;
+    --shadow:0 20px 50px -20px rgba(103,80,164,0.35);
   }
   *{box-sizing:border-box}
   body{
     margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     color:var(--ink);
     background:var(--bg);
     line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
+  h1,h2{font-family:'Manrope','Inter',sans-serif}
   a{color:var(--primary);text-decoration:none}
   a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
   .nav{
-    display:flex;align-items:center;justify-content:space-between;
-    max-width:720px;margin:0 auto;padding:20px 24px;
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--border);
   }
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;color:var(--ink)}
-  .navlinks{display:flex;gap:24px;font-weight:600;font-size:0.95rem}
-  .navlinks a{color:var(--ink-soft)}
+  .nav .inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.15rem;color:var(--ink)}
+  .navlinks{display:flex;gap:24px;font-weight:600;font-size:0.92rem}
+  .navlinks a{color:var(--ink-soft);text-decoration:none}
+  .navlinks a:hover{color:var(--primary)}
+
   .header{
-    background:linear-gradient(160deg,var(--grad-a),var(--primary) 60%,var(--grad-b));
-    color:#fff;padding:48px 24px 56px;text-align:center;
+    background:radial-gradient(1000px 400px at 50% -20%, var(--grad-c), transparent),
+               linear-gradient(180deg, var(--bg-tint), #fff 80%);
+    padding:56px 24px 48px;text-align:center;
+    border-bottom:1px solid var(--border);
   }
-  .header h1{margin:0;font-size:2rem;font-weight:800;letter-spacing:-0.02em}
-  .header p{margin:10px 0 0;color:rgba(255,255,255,0.9)}
-  .content{max-width:720px;margin:0 auto;padding:48px 24px}
+  .header .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--card);border:1px solid var(--border);
+    color:var(--primary-dark);font-weight:700;font-size:0.82rem;
+    padding:7px 14px;border-radius:999px;margin-bottom:18px;
+  }
+  .header h1{margin:0;font-size:clamp(1.9rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.02em}
+  .header p{margin:12px auto 0;color:var(--ink-soft);max-width:440px;font-size:1.05rem}
+
+  .content{padding:56px 24px 80px}
   .card{
-    background:var(--card);
+    background:#fff;
     border:1px solid var(--border);
-    border-radius:16px;
-    padding:28px;
-    margin-bottom:24px;
+    border-radius:20px;
+    padding:30px;
+    margin-bottom:22px;
+    transition:box-shadow .2s ease;
   }
-  .card h2{margin:0 0 12px;font-size:1.15rem}
-  .card p{margin:0 0 10px;color:var(--ink-soft)}
-  .contact-row{
-    display:flex;align-items:center;gap:12px;
-    font-size:1.05rem;font-weight:600;
-    margin-top:6px;
+  .card:hover{box-shadow:var(--shadow)}
+  .card .icon{
+    width:40px;height:40px;border-radius:11px;
+    background:linear-gradient(135deg,var(--grad-a),var(--grad-b));
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.15rem;margin-bottom:14px;
   }
-  ul{color:var(--ink-soft);padding-left:20px}
+  .card h2{margin:0 0 10px;font-size:1.15rem;letter-spacing:-0.01em}
+  .card p{margin:0 0 8px;color:var(--ink-soft)}
+  .contact-btn{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--primary);color:#fff;
+    padding:13px 22px;border-radius:12px;
+    font-weight:700;font-size:1rem;margin-top:8px;
+    box-shadow:var(--shadow);
+  }
+  .contact-btn:hover{background:var(--primary-dark);text-decoration:none}
+  ul{color:var(--ink-soft);padding-left:20px;margin:10px 0 0}
   li{margin-bottom:6px}
-  .footer{
-    border-top:1px solid var(--border);
-    padding:32px 24px;text-align:center;
-    color:var(--ink-soft);font-size:0.9rem;
-  }
-  .footer a{margin:0 8px}
+
+  .footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center}
+  .footer-links{display:flex;justify-content:center;gap:20px;font-weight:600;font-size:0.88rem;color:var(--ink-soft);margin-bottom:10px}
+  .footer-links a{color:var(--ink-soft)}
+  .copyright{color:var(--ink-soft);font-size:0.85rem}
 </style>
 </head>
 <body>
 
   <div class="nav">
-    <div class="brand">🌿 HabitFlow</div>
-    <div class="navlinks">
-      <a href="index.html">Home</a>
-      <a href="https://www.freeprivacypolicy.com/live/7316eec6-d33e-4b9a-9af8-4c084df8482f">Privacy</a>
+    <div class="inner">
+      <div class="brand">🌿 HabitFlow</div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="https://www.freeprivacypolicy.com/live/7316eec6-d33e-4b9a-9af8-4c084df8482f">Privacy</a>
+      </div>
     </div>
   </div>
 
   <div class="header">
+    <span class="eyebrow">💬 We're here to help</span>
     <h1>HabitFlow Support</h1>
-    <p>Having an issue or a question? We're happy to help.</p>
+    <p>Having an issue or a question? Reach out and we'll get back to you.</p>
   </div>
 
   <div class="content">
+    <div class="wrap">
 
-    <div class="card">
-      <h2>Contact us</h2>
-      <p>The fastest way to reach us is by email — we read and respond to every message.</p>
-      <div class="contact-row">✉️ <a href="mailto:help.habitflow@gmail.com">help.habitflow@gmail.com</a></div>
+      <div class="card">
+        <div class="icon">✉️</div>
+        <h2>Contact us</h2>
+        <p>The fastest way to reach us is by email — we read and respond to every message.</p>
+        <a class="contact-btn" href="mailto:help.habitflow@gmail.com">help.habitflow@gmail.com</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🐛</div>
+        <h2>Reporting a bug</h2>
+        <p>To help us fix it quickly, please include:</p>
+        <ul>
+          <li>Your iPhone model (e.g. iPhone 15 Pro)</li>
+          <li>Your iOS version (Settings → General → About)</li>
+          <li>What you expected to happen, and what happened instead</li>
+          <li>Steps to reproduce the issue, if you can</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="icon">💡</div>
+        <h2>Feature requests &amp; feedback</h2>
+        <p>We're actively building HabitFlow and would love to hear what would make it better for you. Send suggestions to the email above.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">👤</div>
+        <h2>Developer</h2>
+        <p>Sunny Yashvantkumar Patel</p>
+      </div>
+
     </div>
-
-    <div class="card">
-      <h2>Reporting a bug</h2>
-      <p>To help us fix it quickly, please include:</p>
-      <ul>
-        <li>Your iPhone model (e.g. iPhone 15 Pro)</li>
-        <li>Your iOS version (Settings → General → About)</li>
-        <li>What you expected to happen, and what happened instead</li>
-        <li>Steps to reproduce the issue, if you can</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Feature requests &amp; feedback</h2>
-      <p>We're actively building HabitFlow and would love to hear what would make it better for you. Send suggestions to the email above.</p>
-    </div>
-
-    <div class="card">
-      <h2>Developer</h2>
-      <p>Sunny Yashvantkumar Patel</p>
-    </div>
-
   </div>
 
   <div class="footer">
-    <div>© 2026 Sunny Yashvantkumar Patel — HabitFlow</div>
-    <div><a href="index.html">Home</a> · <a href="https://www.freeprivacypolicy.com/live/7316eec6-d33e-4b9a-9af8-4c084df8482f">Privacy Policy</a></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="https://www.freeprivacypolicy.com/live/7316eec6-d33e-4b9a-9af8-4c084df8482f">Privacy Policy</a>
+    </div>
+    <div class="copyright">© 2026 Sunny Yashvantkumar Patel — HabitFlow</div>
   </div>
 
 </body>
